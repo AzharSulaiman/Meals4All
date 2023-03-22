@@ -1,10 +1,22 @@
 import React from 'react'
+import './style.css'
+import BottomNavigation  from '../bottom-navigate';
 
-const Request = () => (
-  <div>
-    <h1>Request Page</h1>
-    <p>Did you get here via Redux?</p>
-  </div>
-)
+import { Link } from 'react-router-dom'
+
+class Request extends React.Component {
+  constructor() {
+    super();
+  }
+  render() {
+    return <div>
+      <div>
+        Request 
+      </div>
+     
+      </div>
+  }
+}
+ 
 
 export default Request

@@ -1,0 +1,75 @@
+input {
+    background-color: transparent !important;
+}
+
+.loginHead {
+    text-align: center;
+    width: 100%;
+    margin-top: 125px;
+    font-family: 'Yu Gothic UI';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 32px;
+    align-items: center;
+    color: #FFFFFF;
+}
+
+.formContainer {
+    margin-top: 40px;
+    width: 247px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.adjBoxSpace {
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    width: 247px;
+    height: 55px;
+    border: 1px solid #FFB649;
+    border-radius: 40px;
+}
+
+.adjBoxSpacePass {
+    box-sizing: border-box;
+    width: 247px;
+    height: 55px;
+    border: 1px solid #FFB649;
+    border-radius: 40px;
+}
+
+.adjSubmitBtn {
+    display: block;
+    margin: auto;
+    width: 247px;
+    height: 55px;
+    background: #FFB649;
+    border-radius: 40px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.divider {
+    width: 70%;
+    height: 0px;
+    border: 1px solid #FFB649;
+    text-align: center;
+    margin-left: 15%;
+    margin-bottom: 20px;
+}
+
+.alredyAccTxt {
+    width: 100%;
+    height: 30px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 30px;
+    color: #FFFFFF;
+    text-align: center;
+}

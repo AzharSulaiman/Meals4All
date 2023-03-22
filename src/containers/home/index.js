@@ -1,12 +1,21 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
- 
+import './style.css'
+import BottomNavigation  from '../bottom-navigate';
 
-const Home = () => (
-  <div>
-    <h1>Home Page</h1>
-    <Link to="/requests">Request</Link>
-  </div>
-)
+import { Link } from 'react-router-dom'
+
+class Home extends React.Component {
+  constructor() {
+    super();
+  }
+  render() {
+    return <div>
+      <div>
+        Home 
+      </div>
+      </div>
+  }
+}
+ 
 
 export default Home
