@@ -10,8 +10,6 @@ import {
 class LogIn extends React.Component {
   constructor(props){
     super(props)
-    console.log('props', props)
-
   }
 
   sumbitLogin = () => {
@@ -20,6 +18,14 @@ class LogIn extends React.Component {
   //  loginService({}, ()=>{
   //   this.props.history.push('create-account')
   //  })
+  }
+
+  tabToForgotPass = () => {
+    this.props.history.push('forgot-password');
+  }
+
+  tabToCreateAcc = () => {
+    this.props.history.push('create-account');
   }
 
   render() {
@@ -35,13 +41,13 @@ class LogIn extends React.Component {
       </div>
       
       <button type="submit" className="adjSubmitBtn" onClick={this.sumbitLogin}>Submit</button>
-      <div className="forgotPass">
+      <div className="forgotPass" onClick={this.tabToForgotPass}>
         <p>Forgot Password?</p>
       </div>
      </form>
     </div>
     <div className='divider'></div>
-    <div className='alredyAccTxt'>Don’t have an  Account? <span style={{ color: '#FFB649' }}>Create Account</span></div>
+    <div className='alredyAccTxt'>Don’t have an  Account? <span onClick={this.tabToCreateAcc} style={{ color: '#FFB649', cursor: 'pointer' }}>Create Account</span></div>
   </div>;
   }
 }

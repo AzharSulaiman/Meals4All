@@ -9,11 +9,7 @@ class Home extends React.Component {
     super();
   }
   render() {
-    return <div>
-      <div>
-        Home 
-      </div>
-      </div>
+    return <h2>Home</h2>;
   }
 }
  

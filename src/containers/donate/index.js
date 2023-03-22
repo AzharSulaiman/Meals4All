@@ -9,14 +9,7 @@ class Donate extends React.Component {
     super();
   }
   render() {
-    return <div>
-      <div>
-        content 
-      </div>
-      {/* <div className='bottonContainer'>
-        <BottomNavigation cNav='donate'/>
-      </div> */}
-      </div>
+    return <h2>Donate</h2>;
   }
 }
  

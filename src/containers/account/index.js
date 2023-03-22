@@ -1,10 +1,9 @@
 import React from 'react'
 
-const Donate = () => (
-  <div>
-    <h1>Donate Page</h1>
-    <p>Did you get here via Redux?</p>
-  </div>
-)
+class Account extends React.Component {
+  render() {
+    return <h2>Account</h2>;
+  }
+}
 
-export default Donate
+export default Account

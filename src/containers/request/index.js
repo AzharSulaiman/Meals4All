@@ -9,12 +9,7 @@ class Request extends React.Component {
     super();
   }
   render() {
-    return <div>
-      <div>
-        Request 
-      </div>
-     
-      </div>
+    return <h2>Request</h2>;
   }
 }
  
