@@ -49,6 +49,7 @@ input {
     height: 55px;
     background: #FFB649;
     border-radius: 40px;
+    border: 1px solid #FFB649;
 }
 
 .forgotPass {
