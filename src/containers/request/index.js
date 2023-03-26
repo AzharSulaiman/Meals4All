@@ -9,7 +9,27 @@ class Request extends React.Component {
     super();
   }
   render() {
-    return <h2>Request</h2>;
+    return <div>
+    <div className='homeHead'>Requests</div>
+    <div className='searchContainer'>
+      <input className='searchBox' type="text" placeholder="Search" />
+      <img className='search-icon' src="assets/search-icon.png" />
+    </div>
+    <div className='boxContainer'>
+      <div className='leftContainer'>
+        <img className='food-image' src="assets/food-image.jpeg" />
+      </div>
+      <div className='rightContainer'>
+        <div className='foodTitle'>Food Name</div>
+        <div className='foodAvailability'>4:00PM - 10:00PM</div>
+        <div className='foodLocation'>Location</div>
+      </div>
+      <div>
+         <button className='acceptBtn'>Accept</button>
+          <button className='rejectBtn'>Reject</button>
+      </div>
+    </div>
+    </div>
   }
 }
  

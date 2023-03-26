@@ -9,7 +9,68 @@ class Home extends React.Component {
     super();
   }
   render() {
-    return <h2>Home</h2>;
+    return <div>
+      <div className='homeHead'>Home</div>
+      <div className='searchContainer'>
+        <input className='searchBox' type="text" placeholder="Search" />
+        <img className='search-icon' src="assets/search-icon.png" />
+      </div>
+      <div className='boxContainer'>
+        <div className='leftContainer'>
+          <img className='food-image' src="assets/food-image.jpeg" />
+        </div>
+        <div className='rightContainer'>
+          <div className='foodTitle'>Food Name</div>
+          <div className='foodAvailability'>4:00PM - 10:00PM</div>
+          <div className='foodLocation'>Location</div>
+        </div>
+        <button className='requestBtn'>Request</button>
+      </div>
+      <div className='boxContainer'>
+        <div className='leftContainer'>
+          <img className='food-image' src="assets/food-image.jpeg" />
+        </div>
+        <div className='rightContainer'>
+          <div className='foodTitle'>Food Name</div>
+          <div className='foodAvailability'>4:00PM - 10:00PM</div>
+          <div className='foodLocation'>Location</div>
+        </div>
+        <button className='requestBtn'>Request</button>
+      </div>
+      <div className='boxContainer'>
+        <div className='leftContainer'>
+          <img className='food-image' src="assets/food-image.jpeg" />
+        </div>
+        <div className='rightContainer'>
+          <div className='foodTitle'>Food Name</div>
+          <div className='foodAvailability'>4:00PM - 10:00PM</div>
+          <div className='foodLocation'>Location</div>
+        </div>
+        <button className='requestBtn'>Request</button>
+      </div>
+      <div className='boxContainer'>
+        <div className='leftContainer'>
+          <img className='food-image' src="assets/food-image.jpeg" />
+        </div>
+        <div className='rightContainer'>
+          <div className='foodTitle'>Food Name</div>
+          <div className='foodAvailability'>4:00PM - 10:00PM</div>
+          <div className='foodLocation'>Location</div>
+        </div>
+        <button className='requestBtn'>Request</button>
+      </div>
+      <div className='boxContainer'>
+        <div className='leftContainer'>
+          <img className='food-image' src="assets/food-image.jpeg" />
+        </div>
+        <div className='rightContainer'>
+          <div className='foodTitle'>Food Name</div>
+          <div className='foodAvailability'>4:00PM - 10:00PM</div>
+          <div className='foodLocation'>Location</div>
+        </div>
+        <button className='requestBtn'>Request</button>
+      </div>
+    </div>;
   }
 }
  

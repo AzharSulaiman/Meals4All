@@ -2,3 +2,49 @@
     bottom: 0;
     position: fixed;
 }
+
+.donateHead {
+    text-align: center;
+    margin-top: 31px;
+    margin-bottom: 5%;
+    font-size: 24px;
+}
+
+form {
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+input[type=text],
+input[type=file],
+select {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 1px solid #FFB649;
+    border-radius: 40px;
+    background-color: #fff;
+    resize: vertical;
+}
+
+input[type=submit] {
+    background-color: #FFB649 !important;
+    color: white;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    width: 247px;
+    height: 55px;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+.timeBar {
+    border-radius: 40px;
+    border: 1px solid #FFB649;
+}
