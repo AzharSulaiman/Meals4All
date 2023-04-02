@@ -14,7 +14,6 @@ class BottomNavigation extends React.Component {
     }
 
     componentDidMount =() =>{
-        console.log('location', window.location.pathname.split('/')[1])
         this.props.currentNavigation(window.location.pathname.split('/')[1]);
     }
 

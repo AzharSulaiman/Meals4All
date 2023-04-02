@@ -15,13 +15,16 @@ class Account extends React.Component {
     <div className='accountHead'>Account</div>
     <div className='accntContainer'>
         <div className='titlCont'>
-          <div className='uNameEml'>User Name</div>
+          <div className='acctHead'>User Name:</div>
+          <div className='accDetail'>Jhon Wick</div>
         </div>
         <div className='titlCont'>
-          <div className='eMail'>abc@xyz.com</div>
+          <div className='acctHead'>Email:</div>
+          <div className='accDetail'>abc@xyz.com</div>
         </div>
         <div className='titlCont'>
-          <div className='address'>Address</div>
+          <div className='acctHead'>Address</div>
+          <div className='accDetail'>Address</div>
         </div>
         <div className='titlCont'>
           <div onClick={this.logOut} className='logOut'>Log Out</div>

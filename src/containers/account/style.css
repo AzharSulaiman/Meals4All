@@ -6,15 +6,27 @@
 }
 
 .accntContainer {
-    margin-left: 10%;
     padding: 10px;
     background-color: #fff;
     color: #000;
-    width: 300px;
+    width: 100%;
     border-radius: 10px;
     line-height: 40px;
 }
 
 .titlCont {
     border-bottom: 1px solid #adb5bd;
+    width: 100%;
+    position: relative;
+    height: 40px;
+}
+
+.accDetail {
+    width: 70%;
+    float: left;
+}
+
+.acctHead {
+    width: 30%;
+    float: left;
 }

@@ -1,16 +1,23 @@
-.homeHead {
+.home_homeHead {
     text-align: center;
     margin-top: 31px;
     margin-bottom: 5%;
     font-size: 24px;
 }
 
-.searchContainer {
-    margin-left: 10%;
-    width: 300px;
+.home_container {
+    height: 580px;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
-.searchBox {
+.home_searchContainer {
+    margin-left: 10%;
+    width: 300px;
+    position: relative;
+}
+
+.home_searchBox {
     width: 100%;
     height: 45px;
     border: 1px solid #FFB649;
@@ -18,15 +25,15 @@
     padding-right: 60px;
 }
 
-.search-icon {
+.home_search-icon {
     width: 24px;
     height: 24px;
     position: absolute;
-    right: 14%;
-    top: 14.5%;
+    right: 10px;
+    top: 18px;
 }
 
-.boxContainer {
+.home_boxContainer {
     width: 299px;
     height: 112px;
     background: #F4F4F4;
@@ -34,34 +41,42 @@
     color: #000;
     margin-top: 7%;
     margin-left: 10%;
+    border: 1px solid #FFB649;
 }
 
-.food-image {
+.home_food-image {
     width: 90px;
     height: 90px;
     border-radius: 50%;
 }
 
-.leftContainer {
+.home_leftContainer {
     float: left;
-    width: 45%;
+    width: 30%;
     margin-top: 10px;
     margin-left: 10px;
 }
 
-.rightContainer {
+.home_rightContainer {
     float: right;
-    width: 50%;
+    width: 60%;
     margin-top: 10px;
 }
 
-.requestBtn {
+.home_requestBtn {
     width: 75px;
     height: 25px;
     background: #FFB649;
     border-radius: 25px;
     color: #fff;
     font-size: 12px;
-    margin-left: 60px;
+    float: right;
     border: 1px solid #FFB649;
+    margin-right: 10px;
+}
+
+.home_foodLocation {}
+
+.home_foodLocation span {
+    margin-right: 2px;
 }

@@ -10,9 +10,33 @@ import {
 class LogIn extends React.Component {
   constructor(props){
     super(props)
+    this.state = {
+      inputUserValue: '',
+      refreshed: false
+    }
+  }
+
+  componentDidMount = () => {
+  //  this.refreshOnce()
+  }
+
+  refreshOnce = () => {
+    if (!this.state.refreshed) {
+      this.setState({
+        refreshed: true,
+      })
+      window.location.reload();
+    }
+  }
+
+  handleInputChange = (event) => {
+    this.setState({
+      inputUserValue: event.target.value
+    })
   }
 
   sumbitLogin = () => {
+    console.log(this.state.inputUserValue);
     this.props.history.push('home')
     this.props.currentNavigation(window.location.pathname.split('/')[1]);
   //  loginService({}, ()=>{
@@ -30,24 +54,31 @@ class LogIn extends React.Component {
 
   render() {
     return  <div>
-    <div className='loginHead'>Log In</div>
-    <div className='formContainer'>
+    <div className='logIn_logo_cont'>
+      <div className='inner_logo_cont'>
+      <img className='logo-img' src="assets/logo.png"/>
+      <div className='appName'>Meals4All</div>
+      </div>
+    </div>
+    <div className='logIn_loginHead'>Log In</div>
+    <div className='logIn_formContainer'>
       <form>
         <div className="form-group">
-          <input type="email" className="adjBoxSpace" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"/>
+          <input type="email" className="logIn_adjBoxSpace" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" value={this.state.inputUserValue} onChange={this.handleInputChange}/>
        </div>
       <div className="form-group ">
-        <input type="password" className="adjBoxSpacePass" id="exampleInputPassword1" placeholder="Password"/>
+        <input type="password" className="logIn_adjBoxSpacePass" id="exampleInputPassword1" placeholder="Password"/>
       </div>
       
-      <button type="submit" className="adjSubmitBtn" onClick={this.sumbitLogin}>Submit</button>
-      <div className="forgotPass" onClick={this.tabToForgotPass}>
+      <button type="submit" className="logIn_adjSubmitBtn" onClick={this.sumbitLogin}>Submit</button>
+      <div className="logIn_forgotPass" onClick={this.tabToForgotPass}>
         <p>Forgot Password?</p>
       </div>
+    <div className='logIn_divider'></div>
+
      </form>
     </div>
-    <div className='divider'></div>
-    <div className='alredyAccTxt'>Don’t have an  Account? <span onClick={this.tabToCreateAcc} style={{ color: '#FFB649', cursor: 'pointer' }}>Create Account</span></div>
+    <div className='logIn_alredyAccTxt'>Don’t have an  Account? <span onClick={this.tabToCreateAcc} style={{ color: '#FFB649', cursor: 'pointer' }}>Create Account</span></div>
   </div>;
   }
 }

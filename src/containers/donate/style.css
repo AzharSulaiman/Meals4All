@@ -19,15 +19,18 @@ form {
 
 input[type=text],
 input[type=file],
+input[type=email],
+input[type=password],
 select {
     width: 100%;
     padding: 12px;
     margin: 8px 0;
     box-sizing: border-box;
     border: 1px solid #FFB649;
-    border-radius: 40px;
-    background-color: #fff;
+    border-radius: 18px;
+    background-color: #000;
     resize: vertical;
+    color: #000;
 }
 
 input[type=submit] {
@@ -45,6 +48,16 @@ input[type=submit]:hover {
 }
 
 .timeBar {
-    border-radius: 40px;
+    border-radius: 18px;
     border: 1px solid #FFB649;
+}
+
+#toTime {
+    margin-left: 10px;
+}
+
+.donate_submitBtn {
+    width: 100%;
+    text-align: center;
+    margin-top: 16px;
 }
