@@ -11,7 +11,8 @@ class LogIn extends React.Component {
   constructor(props){
     super(props)
     this.state = {
-      inputUserValue: '',
+      inputUserNamVal: '',
+      inputUserPassVal: '',
       refreshed: false
     }
   }
@@ -29,19 +30,27 @@ class LogIn extends React.Component {
     }
   }
 
-  handleInputChange = (event) => {
+  handleUserInputChange = (event) => {
     this.setState({
-      inputUserValue: event.target.value
+      inputUserNamVal: event.target.value
+    })
+  }
+
+  handlePassInputChange = (event) => {
+    this.setState({
+      inputUserPassVal: event.target.value
     })
   }
 
   sumbitLogin = () => {
-    console.log(this.state.inputUserValue);
-    this.props.history.push('home')
-    this.props.currentNavigation(window.location.pathname.split('/')[1]);
-  //  loginService({}, ()=>{
-  //   this.props.history.push('create-account')
-  //  })
+    console.log('derrf')
+   loginService({
+    email: this.state.inputUserNamVal,
+    password: this.state.inputUserPassVal
+   }, ()=>{
+    this.props.currentNavigation('home');
+    this.props.history.push('home'); 
+   })
   }
 
   tabToForgotPass = () => {
@@ -64,13 +73,13 @@ class LogIn extends React.Component {
     <div className='logIn_formContainer'>
       <form>
         <div className="form-group">
-          <input type="email" className="logIn_adjBoxSpace" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" value={this.state.inputUserValue} onChange={this.handleInputChange}/>
+          <input type="email" className="logIn_adjBoxSpace" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" value={this.state.inputUserNamVal} onChange={this.handleUserInputChange}/>
        </div>
       <div className="form-group ">
-        <input type="password" className="logIn_adjBoxSpacePass" id="exampleInputPassword1" placeholder="Password"/>
+        <input type="password" className="logIn_adjBoxSpacePass" id="exampleInputPassword1" placeholder="Password" value={this.state.inputUserPassVal} onChange={this.handlePassInputChange} />
       </div>
       
-      <button type="submit" className="logIn_adjSubmitBtn" onClick={this.sumbitLogin}>Submit</button>
+      <button className="logIn_adjSubmitBtn" onClick={(e)=> {e.preventDefault();this.sumbitLogin()}}>Submit</button>
       <div className="logIn_forgotPass" onClick={this.tabToForgotPass}>
         <p>Forgot Password?</p>
       </div>

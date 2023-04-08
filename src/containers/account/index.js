@@ -1,5 +1,10 @@
 import React from 'react'
 import './style.css'
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
+import {
+  currentNavigation,
+} from '../../modules/counter'
 
 class Account extends React.Component {
   constructor(props){
@@ -7,7 +12,8 @@ class Account extends React.Component {
   }
 
   logOut = () =>{
-    this.props.history.push('log-in')
+    this.props.currentNavigation('log-in');
+    this.props.history.push('log-in');
   }
 
   render() {
@@ -34,4 +40,20 @@ class Account extends React.Component {
   }
 }
 
-export default Account
+
+const mapStateToProps = ({ counter }) => ({
+  currentNav: counter.currentNav
+})
+
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(
+    {
+      currentNavigation,
+    },
+    dispatch
+  )
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Account)

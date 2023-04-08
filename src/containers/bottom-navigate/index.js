@@ -11,6 +11,7 @@ import { Link } from 'react-router-dom'
 class BottomNavigation extends React.Component {
     constructor(props) {
       super(props);
+      this.navState = ['', '/', 'log-in', 'create-account'] 
     }
 
     componentDidMount =() =>{
@@ -18,7 +19,8 @@ class BottomNavigation extends React.Component {
     }
 
     render() {
-      return this.props.currentNav != 'log-in' && this.props.currentNav != 'create-account' ?  <div className='container'>
+      console.log('nav', this.props.currentNav)
+      return this.navState.indexOf(this.props.currentNav) < 0 ?  <div className='container'>
       <div className="row">
           <Link onClick={()=>this.props.currentNavigation('home')} className="col linkDec" to="/home">
               <img src={(this.props.currentNav == 'home' || this.props.currentNav == '/') ? "assets/home-active.png" : "assets/home.png"} alt="home-icon"/>

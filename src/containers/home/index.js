@@ -37,6 +37,7 @@ class Home extends React.Component {
     }
 
   }
+
   render() {
     return <div>
       <div className='home_homeHead'>Home</div>
@@ -46,7 +47,7 @@ class Home extends React.Component {
       </div>
       <div className='home_container'>
         {this.state.list.map((item, index) =>  (
-           <div className='home_boxContainer'><div className='home_leftContainer'>
+           <div key={item.title + '_' + index} className='home_boxContainer'><div className='home_leftContainer'>
             <img className='home_food-image' src={item.image} />
           </div><div className='home_rightContainer'>
               <div className='home_foodTitle'>{item.title}</div>
