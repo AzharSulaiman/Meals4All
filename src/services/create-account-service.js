@@ -4,16 +4,16 @@ export function registerService(param, callback){
     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 
     xhr.onreadystatechange = () => { 
-    if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+    if (xhr.readyState == 4 && xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
         // Request finished. Do processing here.
     console.log('success');
 
         callback()
-    }else{
+    }else if(xhr.readyState == 4){
         alert('Something went wrong');
     console.log('failed')
 
     }
     }
-    xhr.send("name=Az&email=azharsulaiman3@gmail.com&password=abc@321&c_password=abc@321");
+    xhr.send('name='+param.name+'&email='+param.email+'&password='+param.password+'&c_password='+param.c_password);
 }

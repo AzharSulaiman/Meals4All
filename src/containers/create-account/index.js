@@ -1,10 +1,45 @@
 import React from 'react'
 import './style.css'
 import {registerService} from '../../services/create-account-service'
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
+import {
+  currentNavigation,
+} from '../../modules/counter'
 
 class CreateAccount extends React.Component {
   constructor(props){
     super(props)
+    this.state = {
+      inputUserNamVal: '',
+      inputUserEmailVal: '',
+      inputUserPassVal: '',
+      inputUserCPassVal: ''
+    }
+  }
+
+  handleUserNInputChange = (event) => {
+    this.setState({
+      inputUserNamVal: event.target.value
+    })
+  }
+
+  handleEmailInputChange = (event) => {
+    this.setState({
+      inputUserEmailVal: event.target.value
+    })
+  }
+
+  handlePassInputChange = (event) => {
+    this.setState({
+      inputUserPassVal: event.target.value
+    })
+  }
+
+  handleCPassInputChange = (event) => {
+    this.setState({
+      inputUserCPassVal: event.target.value
+    })
   }
 
   tabToLogIn = () =>{
@@ -13,7 +48,14 @@ class CreateAccount extends React.Component {
 
   tabToSubmit = () => {
     // this.props.history.push('log-in')
-    registerService({}, ()=>{
+    registerService({
+      name: this.state.inputUserNamVal,
+      email: this.state.inputUserEmailVal,
+      password: this.state.inputUserPassVal,
+      c_password: this.state.inputUserCPassVal,
+
+    }, ()=>{
+    this.props.currentNavigation('log-in');
     this.props.history.push('log-in')
    })
   }
@@ -31,15 +73,18 @@ class CreateAccount extends React.Component {
    <div className='create_formContainer'>
      <form>
      <div className="form-group">
-         <input type="text" className="create_adjBoxSpace" id="exampleFullName" aria-describedby="fullname" placeholder="Full Name"/>
+         <input type="text" className="create_adjBoxSpace" id="exampleFullName" aria-describedby="fullname" placeholder="Full Name" value={this.state.inputUserNamVal} onChange={this.handleUserNInputChange}/>
       </div>
        <div className="form-group">
-         <input type="email" className="create_adjBoxSpace" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"/>
+         <input type="email" className="create_adjBoxSpace" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" value={this.state.inputUserEmailVal} onChange={this.handleEmailInputChange}/>
       </div>
      <div className="form-group ">
-       <input type="password" className="create_adjBoxSpacePass" id="exampleInputPassword1" placeholder="Password"/>
+       <input type="password" className="create_adjBoxSpacePass" id="exampleInputPassword1" placeholder="Password" value={this.state.inputUserPassVal} onChange={this.handlePassInputChange}/>
      </div>
-     <button type="submit" className="create_adjSubmitBtn" onClick={this.tabToSubmit}>Submit</button>
+     <div className="form-group ">
+       <input type="password" className="create_adjBoxSpacePass" id="exampleInputPassword2" placeholder="Password" value={this.state.inputUserCPassVal} onChange={this.handleCPassInputChange}/>
+     </div>
+     <button type="submit" className="create_adjSubmitBtn" onClick={(e)=> {e.preventDefault();this.tabToSubmit()}}>Submit</button>
     </form>
    </div>
    <div className='divider'></div>
@@ -49,4 +94,20 @@ class CreateAccount extends React.Component {
   }
 }
 
-export default CreateAccount
+const mapStateToProps = ({ counter }) => ({
+  currentNav: counter.currentNav
+})
+
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(
+    {
+      currentNavigation,
+    },
+    dispatch
+  )
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(CreateAccount)
+

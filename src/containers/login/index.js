@@ -17,18 +17,6 @@ class LogIn extends React.Component {
     }
   }
 
-  componentDidMount = () => {
-  //  this.refreshOnce()
-  }
-
-  refreshOnce = () => {
-    if (!this.state.refreshed) {
-      this.setState({
-        refreshed: true,
-      })
-      window.location.reload();
-    }
-  }
 
   handleUserInputChange = (event) => {
     this.setState({
@@ -43,7 +31,6 @@ class LogIn extends React.Component {
   }
 
   sumbitLogin = () => {
-    console.log('derrf')
    loginService({
     email: this.state.inputUserNamVal,
     password: this.state.inputUserPassVal
