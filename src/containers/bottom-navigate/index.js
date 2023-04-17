@@ -19,7 +19,6 @@ class BottomNavigation extends React.Component {
     }
 
     render() {
-      console.log('nav', this.props.currentNav)
       return this.navState.indexOf(this.props.currentNav) < 0 ?  <div className='container'>
       <div className="row">
           <Link onClick={()=>this.props.currentNavigation('home')} className="col linkDec" to="/home">

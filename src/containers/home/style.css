@@ -6,7 +6,7 @@
 }
 
 .home_container {
-    height: 580px;
+    height: 440px;
     overflow-y: auto;
     overflow-x: hidden;
 }
@@ -75,7 +75,11 @@
     margin-right: 10px;
 }
 
-.home_foodLocation {}
+.home_foodLocation {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
 
 .home_foodLocation span {
     margin-right: 2px;

@@ -6,12 +6,10 @@ export function registerService(param, callback){
     xhr.onreadystatechange = () => { 
     if (xhr.readyState == 4 && xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
         // Request finished. Do processing here.
-    console.log('success');
 
         callback()
     }else if(xhr.readyState == 4){
         alert('Something went wrong');
-    console.log('failed')
 
     }
     }

@@ -31,6 +31,8 @@ class LogIn extends React.Component {
   }
 
   sumbitLogin = () => {
+    // this.props.currentNavigation('home');
+    // this.props.history.push('home'); 
    loginService({
     email: this.state.inputUserNamVal,
     password: this.state.inputUserPassVal

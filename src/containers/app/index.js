@@ -19,7 +19,8 @@ class App extends React.Component {
  successFunction(position) {
     var lat = position.coords.latitude;
     var long = position.coords.longitude;
-    console.log('Your latitude is :'+lat+' and longitude is '+long);
+    localStorage.setItem('lat', lat);
+    localStorage.setItem('long', long);
 }
 
 errorFunction(message) {

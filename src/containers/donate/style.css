@@ -61,3 +61,8 @@ input[type=submit]:hover {
     text-align: center;
     margin-top: 16px;
 }
+
+.categoryBox {
+    border-radius: 18px;
+    border: 1px solid #FFB649;
+}
