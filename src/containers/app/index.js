@@ -9,6 +9,7 @@ import CreateAccount from '../create-account'
 import BottomNavigation  from '../bottom-navigate';
 import ForgotPassword from '../fotgot-password';
 import Account from '../account';
+import DetailScreen from '../detail-screen';
 
 
 class App extends React.Component {
@@ -47,6 +48,7 @@ errorFunction(message) {
       <Route exact path="/create-account" component={CreateAccount} />
       <Route exact path="/forgot-password" component={ForgotPassword} />
       <Route exact path="/account" component={Account} />
+      <Route exact path="/detail-screen" component={DetailScreen} />
     </Switch>
     <div className='bottonContainer'>
         <BottomNavigation/>

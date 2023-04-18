@@ -80,3 +80,24 @@
     margin-right: 1px;
     border: 1px solid #D0312D;
 }
+
+.status {
+    font-style: italic;
+    color: red;
+}
+
+.secHeadDonar {
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+    color: #FFB649;
+    text-decoration: underline;
+}
+
+.secHeadRequest {
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+    color: red;
+    text-decoration: underline;
+}

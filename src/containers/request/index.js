@@ -45,27 +45,30 @@ class Request extends React.Component {
   render() {
     return <div>
     <div className='homeHead'>Requests</div>
-    <div className='searchContainer'>
-      <input className='searchBox' type="text" placeholder="Search" />
-      <img className='search-icon' src="assets/search-icon.png" />
-    </div>
+    <div className='secHeadDonar'>Donation</div>
     <div className='home_container'>
         {this.state.donation.map((item, index) =>  (
+           item.request_status === 'pending' && (
            <div className='home_boxContainer'><div className='home_leftContainer'>
             <img className='home_food-image' src={'http://69.48.142.41/'+item.image}/>
           </div>
           <div className='home_rightContainer'>
           <div className='home_foodTitle'>{item.title}</div>
               <div className='home_foodLocation'><span><img src='assets/location-icon.png'/></span><span className='home_foodLocation'>{item.address}</span></div>
-              {/* <div className='home_category'>
+              <div className='home_category'>
                 {item.category.join(', ')}
-              </div> */}
+              </div>
             </div>
-            <button className='home_requestBtn' onClick={(e)=> {e.preventDefault();this.requestAccept(item.id)}}>Accept</button>
-            <button className='home_rejectBtn' onClick={(e)=> {e.preventDefault();this.requestReject(item.id)}}>Reject</button>
+           
+            <div>
+              <button className='home_requestBtn' onClick={(e)=> {e.preventDefault();this.requestAccept(item.id)}}>Accept</button>
+              <button className='home_rejectBtn' onClick={(e)=> {e.preventDefault();this.requestReject(item.id)}}>Reject</button>
+            </div> 
             </div>
+           )
         ))}
          <hr/>
+      <div className='secHeadRequest'>Request</div>
       <div>
         {this.state.list.map((item, index) =>  (
            <div className='home_boxContainer'><div className='home_leftContainer'>
@@ -74,9 +77,10 @@ class Request extends React.Component {
           <div className='home_rightContainer'>
           <div className='home_foodTitle'>{item.title}</div>
               <div className='home_foodLocation'><span><img src='assets/location-icon.png'/></span><span className='home_foodLocation'>{item.address}</span></div>
-              {/* <div className='home_category'>
+              <div className='home_category'>
                 {item.category.join(', ')}
-              </div> */}
+              </div>
+              <div className='status'>{item.request_status}</div>
             </div>
             
             </div>

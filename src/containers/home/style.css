@@ -6,7 +6,7 @@
 }
 
 .home_container {
-    height: 440px;
+    height: 485px;
     overflow-y: auto;
     overflow-x: hidden;
 }
@@ -35,7 +35,7 @@
 
 .home_boxContainer {
     width: 299px;
-    height: 112px;
+    height: 115px;
     background: #F4F4F4;
     border-radius: 25px;
     color: #000;

@@ -17,9 +17,9 @@ class Donate extends React.Component {
       description: '',
       category: '[]',
       availability: 1,
-      long: '-75.1738704',
-      lat: '40.2518999',
-      address: 'Worcester, MA',
+      long: localStorage.getItem('lat'),
+      lat: localStorage.getItem('long'),
+      address: '',
       image: '',
     }
 
@@ -90,11 +90,8 @@ class Donate extends React.Component {
     return <div>
     <div className='donateHead'>Donate</div>
     <form>
-    <div className='availibiltyLable' >Title</div>
 		<input type="text" id="title" name="title" placeholder="Enter the title of the food.." value={this.state.title} onChange={this.handleTitleInputChange}/>
-    <div className='availibiltyLable'>Description</div>
 		<input type="text" id="description" name="title" placeholder="Enter the description of the food.." value={this.state.description} onChange={this.handleDescriptionInputChange} />
-    <div className='availibiltyLable'>Address</div>
     <input type="text" id="address" name="title" placeholder="Enter the Address.." value={this.state.address} onChange={this.handleAddressInputChange} />
     <div className='dropdown'>
     <DropdownComp callBack={(data)=>{
@@ -105,9 +102,7 @@ class Donate extends React.Component {
     }}/>
     </div>
 
-    <div className='availibiltyLable'>Upload Picture</div>
 		<input type="file" id="picture" name="picture" accept="image/*" multiple/>
-		{/* <input type="text" id="quantity" name="quantity" placeholder="Enter the quantity of the food.."/> */}
     <div className='donate_submitBtn'>
 		<input type="submit" value="Submit" onClick={(e)=> {e.preventDefault();this.tabToSubmitDonation()}}/>
 
