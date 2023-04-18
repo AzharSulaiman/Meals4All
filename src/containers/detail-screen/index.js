@@ -13,8 +13,9 @@ class DetailScreen extends React.Component {
 
       componentDidMount = () => {
         getDetailsApi((detailData)=> {
+            console.log('deta', detailData)
           this.setState({
-            list: detailData
+            list: [this.state.list,detailData]
           })
         })
       }

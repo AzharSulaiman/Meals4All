@@ -65,6 +65,6 @@ export function filterService(param, callback){
       alert('Something went wrong');
   }
   }
-  xhr.send('filter_medium='+param.searchTxt);
+  xhr.send('filter_medium='+param.filterVal);
 }
   

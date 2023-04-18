@@ -71,15 +71,21 @@ class Home extends React.Component {
         <input className='home_searchBox' type="text" placeholder="Search By Title Or Location..." value={this.state.searchItem} onChange={this.handleSearchInputChange}/>
         <img className='home_search-icon' src="assets/search-icon.png" onClick={this.tapToSearch}/>
       </div>
-      {/* <div>
-        <span>Filter By:</span>
-        <DropdownComp callBack={(data)=>{
+      <div className='home_filterContainer'>
+        <DropdownComp title="Filter By Category" callBack={(data)=>{
           const ddId = data.map(fData=> { return fData.id})
-          this.setState({
-            category: '['+ddId.toString()+']'
-          })
+          filterService({
+            filterVal: ddId
+          }, (sData)=>{
+            this.setState({
+              list: sData
+            })
+         })
+          // this.setState({
+          //   category: '['+ddId.toString()+']'
+          // })
         }}/>
-      </div> */}
+      </div>
       <div className='home_container'>
         {this.state.list.map((item, index) =>  (
            <div key={item.title + '_' + index} className='home_boxContainer'><div className='home_leftContainer'>

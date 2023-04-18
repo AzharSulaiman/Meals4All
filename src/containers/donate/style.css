@@ -66,3 +66,11 @@ input[type=submit]:hover {
     border-radius: 18px;
     border: 1px solid #FFB649;
 }
+
+.btn {
+    background-color: #45a049;
+}
+
+.btn:hover {
+    background-color: #45a049;
+}

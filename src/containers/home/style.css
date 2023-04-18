@@ -11,6 +11,13 @@
     overflow-x: hidden;
 }
 
+.home_filterContainer {
+    margin-left: 10%;
+    width: 300px;
+    position: relative;
+    text-align: right;
+}
+
 .home_searchContainer {
     margin-left: 10%;
     width: 300px;

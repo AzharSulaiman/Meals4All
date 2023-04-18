@@ -25,7 +25,7 @@ const DropdownComp = (props) => {
   };
 
   return (
-    <DropdownButton id="dropdown-basic-button" title="Select options">
+    <DropdownButton id="dropdown-basic-button" title={props.title?props.title:'Select Option'}>
       {optionList.map((option) => (
         <Dropdown.Item key={option.id} onClick={() => handleSelect(option)}>
           {option.name}
