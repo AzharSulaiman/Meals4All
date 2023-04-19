@@ -94,7 +94,7 @@ class Donate extends React.Component {
 		<input type="text" id="description" name="title" placeholder="Enter the description of the food.." value={this.state.description} onChange={this.handleDescriptionInputChange} />
     <input type="text" id="address" name="title" placeholder="Enter the Address.." value={this.state.address} onChange={this.handleAddressInputChange} />
     <div className='dropdown'>
-    <DropdownComp callBack={(data)=>{
+    <DropdownComp title="Select Category" callBack={(data)=>{
       const ddId = data.map(fData=> { return fData.id})
       this.setState({
         category: '['+ddId.toString()+']'

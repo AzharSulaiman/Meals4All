@@ -91,3 +91,23 @@
 .home_foodLocation span {
     margin-right: 2px;
 }
+
+.btn {
+    background-color: #FFF;
+    color: #000;
+    border-color: #FFB649;
+}
+
+.btn:hover {
+    background-color: #FFF;
+    color: #000;
+    border-color: #FFB649;
+}
+
+button.btn:active,
+button.btn:target,
+.btn:first-child:active {
+    background-color: #FFF;
+    color: #000;
+    border-color: #FFB649;
+}

@@ -42,7 +42,6 @@ class Home extends React.Component {
     searchService({
       searchTxt: this.state.searchItem
     }, (sData)=>{
-      console.log('sData', sData)
     // this.props.history.push('home'); 
       this.setState({
         list: sData
@@ -81,9 +80,6 @@ class Home extends React.Component {
               list: sData
             })
          })
-          // this.setState({
-          //   category: '['+ddId.toString()+']'
-          // })
         }}/>
       </div>
       <div className='home_container'>

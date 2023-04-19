@@ -68,9 +68,21 @@ input[type=submit]:hover {
 }
 
 .btn {
-    background-color: #45a049;
+    background-color: #FFF;
+    color: #000;
+    border-color: #FFB649;
 }
 
 .btn:hover {
-    background-color: #45a049;
+    background-color: #FFF;
+    color: #000;
+    border-color: #FFB649;
+}
+
+button.btn:active,
+button.btn:target,
+.btn:first-child:active {
+    background-color: #FFF;
+    color: #000;
+    border-color: #FFB649;
 }

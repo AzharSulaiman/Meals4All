@@ -3,7 +3,6 @@ export function getDetailsApi(callback) {
     const id = localStorage.getItem('itemId')
     xhr.onreadystatechange = function() {
       if (xhr.readyState === 4 && xhr.status === 200) {
-        console.log('ddd', JSON.parse(xhr.response).data)
         callback(JSON.parse(xhr.response).data);
       }
     };
