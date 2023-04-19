@@ -45,10 +45,10 @@ class DetailScreen extends React.Component {
                   <div className="detail-category">  {item.category.join(', ')}</div>
                   <div className='headLabel'>Posted On</div>
                   <div className="detail-category">{this.state.date}</div>
-                  {/* <div className='headLabel'>Posted By</div> */}
-                  {/* <div className="detail-posted-by">
+                  <div className='headLabel'>Posted By</div> 
+                  <div className="detail-posted-by">
                    {item.postedBy}
-                  </div> */}
+                  </div>
                 </div>
               </div>
             ))}

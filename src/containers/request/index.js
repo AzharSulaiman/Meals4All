@@ -20,6 +20,12 @@ class Request extends React.Component {
     })
   }
 
+  tapForDetails = (itemIdD) => {
+    localStorage.removeItem("itemId");
+    localStorage.setItem('itemId', itemIdD)
+    this.props.history.push('detail-screen'); 
+  }
+
   requestAccept = (itemId) => {
     requestAcceptService({
       itemId: itemId
@@ -53,7 +59,7 @@ class Request extends React.Component {
             <img className='home_food-image' src={'http://69.48.142.41/'+item.image}/>
           </div>
           <div className='home_rightContainer'>
-          <div className='home_foodTitle'>{item.title}</div>
+          <div className='home_foodTitle' onClick={(e)=> {e.preventDefault();this.tapForDetails(item.id)}}>{item.title}</div>
               <div className='home_foodLocation'><span><img src='assets/location-icon.png'/></span><span className='home_foodLocation'>{item.address}</span></div>
               <div className='home_category'>
                 {item.category.join(', ')}
@@ -75,7 +81,7 @@ class Request extends React.Component {
             <img className='home_food-image' src={'http://69.48.142.41/'+item.image}/>
           </div>
           <div className='home_rightContainer'>
-          <div className='home_foodTitle'>{item.title}</div>
+          <div className='home_foodTitle'  onClick={(e)=> {e.preventDefault();this.tapForDetails(item.id)}}>{item.title}</div>
               <div className='home_foodLocation'><span><img src='assets/location-icon.png'/></span><span className='home_foodLocation'>{item.address}</span></div>
               <div className='home_category'>
                 {item.category.join(', ')}

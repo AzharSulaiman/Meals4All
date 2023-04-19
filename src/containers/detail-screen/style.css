@@ -18,6 +18,7 @@
 
 .detail-image {
     width: 200px;
+    border: 1px solid #FFB649;
 }
 
 .detail-info {
