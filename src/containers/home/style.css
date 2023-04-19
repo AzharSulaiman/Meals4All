@@ -5,6 +5,11 @@
     font-size: 24px;
 }
 
+.home_foodTitle {
+    font-weight: bold;
+    /* text-decoration: underline; */
+}
+
 .home_container {
     height: 485px;
     overflow-y: auto;

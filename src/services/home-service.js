@@ -21,7 +21,6 @@ export function requestService(param, callback){
 
   xhr.onreadystatechange = () => { 
   if (xhr.readyState == 4 && xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
-      // Request finished. Do processing here.
       alert(xhr.responseText);
       callback()
   }else if(xhr.readyState == 4){
@@ -59,8 +58,7 @@ export function filterService(param, callback){
   xhr.onreadystatechange = () => { 
   if (xhr.readyState == 4 && xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
       // Request finished. Do processing here.
-      alert(xhr.responseText);
-      callback()
+      callback(JSON.parse(xhr.response).data)
   }else if(xhr.readyState == 4){
       alert('Something went wrong');
   }

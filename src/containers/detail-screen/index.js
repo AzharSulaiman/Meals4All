@@ -23,6 +23,8 @@ class DetailScreen extends React.Component {
             list: [...this.state.list,detailData]
           })
         })
+        console.log('redy', this.state.list)
+        // this.state.date = new Date()
     }
 
       render() {
@@ -40,7 +42,7 @@ class DetailScreen extends React.Component {
                   <div className='headLabel'>Desciption</div>
                   <div className="detail-description">{item.description}</div>
                   <div className='headLabel'>Category</div>
-                  <div className="detail-category">    {item.category.join(', ')}</div>
+                  <div className="detail-category">  {item.category.join(', ')}</div>
                   <div className='headLabel'>Posted On</div>
                   <div className="detail-category">{this.state.date}</div>
                   {/* <div className='headLabel'>Posted By</div> */}
