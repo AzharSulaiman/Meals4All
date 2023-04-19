@@ -82,7 +82,7 @@ class CreateAccount extends React.Component {
        <input type="password" className="create_adjBoxSpacePass" id="exampleInputPassword1" placeholder="Password" value={this.state.inputUserPassVal} onChange={this.handlePassInputChange}/>
      </div>
      <div className="form-group ">
-       <input type="password" className="create_adjBoxSpacePass" id="exampleInputPassword2" placeholder="Password" value={this.state.inputUserCPassVal} onChange={this.handleCPassInputChange}/>
+       <input type="password" className="create_adjBoxSpacePass" id="exampleInputPassword2" placeholder="Confirm Password" value={this.state.inputUserCPassVal} onChange={this.handleCPassInputChange}/>
      </div>
      <button type="submit" className="create_adjSubmitBtn" onClick={(e)=> {e.preventDefault();this.tabToSubmit()}}>Submit</button>
     </form>
