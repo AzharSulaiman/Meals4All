@@ -5,6 +5,7 @@ import { connect } from 'react-redux'
 import {
   currentNavigation,
 } from '../../modules/counter'
+import { withNavigation } from "../../services/with-route-nav";
 
 class ForgotPassword extends React.Component {
   constructor(props){
@@ -12,7 +13,8 @@ class ForgotPassword extends React.Component {
   }
 
   resetPassword = () =>{
-    this.props.history.push('log-in')
+    this.props.navigate('/log-in');
+
   }
   
   render() {
@@ -51,7 +53,7 @@ const mapDispatchToProps = dispatch =>
     dispatch
   )
 
-export default connect(
+export default withNavigation(connect(
   mapStateToProps,
   mapDispatchToProps
-)(ForgotPassword)
+)(ForgotPassword))

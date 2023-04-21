@@ -3,6 +3,8 @@ import './style.css'
 import {getHomeDataApi, requestService, searchService, filterService} from '../../services/home-service';
 import {getCategoryDataApi} from '../../services/donate-service';
 import DropdownComp from '../dropdown';
+import { withNavigation } from "../../services/with-route-nav";
+
 
 class Home extends React.Component {
   constructor() {
@@ -28,7 +30,8 @@ class Home extends React.Component {
     requestService({
       itemId: itemId
     }, ()=>{
-    this.props.history.push('home'); 
+    this.props.navigate('/home');
+
    })
   }
 
@@ -51,7 +54,8 @@ class Home extends React.Component {
   tapForDetails = (itemIdD) => {
     localStorage.removeItem("itemId");
     localStorage.setItem('itemId', itemIdD)
-    this.props.history.push('detail-screen'); 
+    this.props.navigate('/detail-screen');
+
   }
 
   render() {
@@ -93,4 +97,4 @@ class Home extends React.Component {
 }
  
 
-export default Home
+export default withNavigation(Home)

@@ -6,6 +6,8 @@ import { connect } from 'react-redux'
 import {
   currentNavigation,
 } from '../../modules/counter'
+import { withNavigation } from "../../services/with-route-nav";
+
 
 class CreateAccount extends React.Component {
   constructor(props){
@@ -43,11 +45,11 @@ class CreateAccount extends React.Component {
   }
 
   tabToLogIn = () =>{
-    this.props.history.push('log-in')
+    this.props.navigate('/log-in');
+
   }
 
   tabToSubmit = () => {
-    // this.props.history.push('log-in')
     registerService({
       name: this.state.inputUserNamVal,
       email: this.state.inputUserEmailVal,
@@ -56,7 +58,8 @@ class CreateAccount extends React.Component {
 
     }, ()=>{
     this.props.currentNavigation('log-in');
-    this.props.history.push('log-in')
+    this.props.navigate('/log-in');
+
    })
   }
 
@@ -106,8 +109,8 @@ const mapDispatchToProps = dispatch =>
     dispatch
   )
 
-export default connect(
+export default withNavigation(connect(
   mapStateToProps,
   mapDispatchToProps
-)(CreateAccount)
+)(CreateAccount))
 

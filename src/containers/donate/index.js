@@ -8,6 +8,8 @@ import {
 
 import { donateService, getCategoryDataApi } from '../../services/donate-service';
 import DropdownComp from '../dropdown';
+import { withNavigation } from "../../services/with-route-nav";
+
 
 class Donate extends React.Component {
   constructor(props) {
@@ -68,7 +70,6 @@ class Donate extends React.Component {
   tabToSubmitDonation = () => {
     this.props.currentNavigation('home');
 
-    this.props.history.push('home'); 
     donateService({
       title: this.state.title,
       description: this.state.description,
@@ -81,8 +82,8 @@ class Donate extends React.Component {
 
     }, ()=>{
     alert('succesfully posted!!');
-    // this.props.currentNavigation('home');
-    this.props.history.push('home'); 
+    this.props.navigate('/home');
+
    })
   }
 
@@ -125,8 +126,8 @@ const mapDispatchToProps = dispatch =>
     dispatch
   )
 
-export default connect(
+export default withNavigation(connect(
   mapStateToProps,
   mapDispatchToProps
-)(Donate)
+)(Donate))
 

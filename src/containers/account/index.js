@@ -5,6 +5,8 @@ import { connect } from 'react-redux'
 import {
   currentNavigation,
 } from '../../modules/counter'
+import { withNavigation } from "../../services/with-route-nav";
+
 
 class Account extends React.Component {
   constructor(props){
@@ -18,7 +20,8 @@ class Account extends React.Component {
 
   logOut = () =>{
     this.props.currentNavigation('log-in');
-    this.props.history.push('log-in');
+    this.props.navigate('/log-in');
+
   }
 
   render() {
@@ -54,7 +57,7 @@ const mapDispatchToProps = dispatch =>
     dispatch
   )
 
-export default connect(
+export default withNavigation(connect(
   mapStateToProps,
   mapDispatchToProps
-)(Account)
+)(Account))

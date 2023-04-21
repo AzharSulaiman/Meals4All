@@ -1,5 +1,5 @@
 import React from 'react'
-import { Route, Link, BrowserRouter, Switch } from 'react-router-dom'
+import { Route, Routes, BrowserRouter, Switch } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.css';
 import Home from '../home'
 import Request from '../request'
@@ -39,17 +39,17 @@ errorFunction(message) {
 
   render() {
     return   <BrowserRouter>
-    <Switch>
-      <Route exact path="/home" component={Home} />
-      <Route exact path="/" component={LogIn} />
-      <Route exact path="/log-in" component={LogIn} />
-      <Route exact path="/requests" component={Request} />
-      <Route exact path="/donate" component={Donate} />
-      <Route exact path="/create-account" component={CreateAccount} />
-      <Route exact path="/forgot-password" component={ForgotPassword} />
-      <Route exact path="/account" component={Account} />
-      <Route exact path="/detail-screen" component={DetailScreen} />
-    </Switch>
+    <Routes>
+      <Route exact path="/home" element={<Home />} />
+      <Route exact path="/" element={<LogIn />} />
+      <Route exact path="/log-in" element={<LogIn/>} />
+      <Route exact path="/requests" element={<Request/>} />
+      <Route exact path="/donate" element={<Donate/>} />
+      <Route exact path="/create-account" element={<CreateAccount/>} />
+      <Route exact path="/forgot-password" element={<ForgotPassword/>} />
+      <Route exact path="/account" element={<Account/>} />
+      <Route exact path="/detail-screen" element={<DetailScreen/>} />
+    </Routes>
     <div className='bottonContainer'>
         <BottomNavigation/>
      </div>

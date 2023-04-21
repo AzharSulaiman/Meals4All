@@ -1,6 +1,7 @@
 import React from 'react'
 import './style.css'
 import {getRequestedDataApi, requestAcceptService, requestRejectService, requestUpdateService} from '../../services/request-service';
+import { withNavigation } from "../../services/with-route-nav";
 
 class Request extends React.Component {
   constructor() {
@@ -23,7 +24,8 @@ class Request extends React.Component {
   tapForDetails = (itemIdD) => {
     localStorage.removeItem("itemId");
     localStorage.setItem('itemId', itemIdD)
-    this.props.history.push('detail-screen'); 
+    this.props.navigate('/detail-screen');
+    
   }
 
   requestAccept = (itemId) => {
@@ -100,4 +102,4 @@ class Request extends React.Component {
 }
  
 
-export default Request
+export default withNavigation(Request)

@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{ Component} from "react";
 import './style.css'
 import {loginService} from '../../services/login-service'
 import { bindActionCreators } from 'redux'
@@ -6,6 +6,7 @@ import { connect } from 'react-redux'
 import {
   currentNavigation,
 } from '../../modules/counter'
+import { withNavigation } from "../../services/with-route-nav";
 
 class LogIn extends React.Component {
   constructor(props){
@@ -31,23 +32,22 @@ class LogIn extends React.Component {
   }
 
   sumbitLogin = () => {
-    // this.props.currentNavigation('home');
-    // this.props.history.push('home'); 
    loginService({
     email: this.state.inputUserNamVal,
     password: this.state.inputUserPassVal
    }, ()=>{
     this.props.currentNavigation('home');
-    this.props.history.push('home'); 
+    this.props.navigate('/home');
    })
   }
 
   tabToForgotPass = () => {
-    this.props.history.push('forgot-password');
+    this.props.navigate('/forgot-password');
   }
 
   tabToCreateAcc = () => {
-    this.props.history.push('create-account');
+    this.props.navigate('/create-account');
+    
   }
 
   render() {
@@ -93,10 +93,10 @@ const mapDispatchToProps = dispatch =>
     dispatch
   )
 
-export default connect(
+export default withNavigation(connect(
   mapStateToProps,
   mapDispatchToProps
-)(LogIn)
+)(LogIn))
 
 
 
